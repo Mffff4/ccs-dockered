@@ -14,4 +14,4 @@ services:
     tty: true
 
 volumes:
-  ccs_ {}
+  ccs_
