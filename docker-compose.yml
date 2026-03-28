@@ -1,0 +1,17 @@
+services:
+  ccs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ccs-dashboard
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - ccs_data:/root/.ccs
+      - ./workspace:/workspace
+    stdin_open: true
+    tty: true
+
+volumes:
+  ccs_data:
