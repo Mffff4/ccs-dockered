@@ -3,15 +3,15 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: ccs-dashboard
     restart: unless-stopped
-    ports:
-      - "3003:3000"
+    command: ["sh", "-lc", "ccs config --host 0.0.0.0 --port 3000"]
+    expose:
+      - "3000"
     volumes:
-      - ccs_data:/root/.ccs
+      - ccs_/root/.ccs
       - ./workspace:/workspace
     stdin_open: true
     tty: true
 
 volumes:
-  ccs_data:
+  ccs_
