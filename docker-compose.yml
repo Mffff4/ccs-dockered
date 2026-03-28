@@ -8,10 +8,10 @@ services:
     expose:
       - "3000"
     volumes:
-      - ccs_/root/.ccs
+      - ccs_:/root/.ccs
       - ./workspace:/workspace
     stdin_open: true
     tty: true
 
 volumes:
-  ccs_
+  ccs_: {}
