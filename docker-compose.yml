@@ -6,7 +6,7 @@ services:
     container_name: ccs-dashboard
     restart: unless-stopped
     ports:
-      - "3000:3000"
+      - "3003:3000"
     volumes:
       - ccs_data:/root/.ccs
       - ./workspace:/workspace
