@@ -6,7 +6,7 @@ RUN apt-get update     && apt-get install -y --no-install-recommends ca-certific
 
 RUN ccs migrate
 
-RUN mkdir -p /root/.ccs && ccs config --host 0.0.0.0
+RUN mkdir -p /root/.ccs
 
 WORKDIR /workspace
 RUN mkdir -p /workspace ${CCS_HOME}
@@ -14,4 +14,4 @@ RUN mkdir -p /workspace ${CCS_HOME}
 EXPOSE 3000
 VOLUME ["/root/.ccs", "/workspace"]
 
-CMD ["sh", "-lc", "ccs config --host 0.0.0.0"]
+CMD ["ccs", "config", "--host", "0.0.0.0"]
